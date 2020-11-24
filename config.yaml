@@ -1,0 +1,6 @@
+courses:
+  - title: course1
+    organization: easymind 2020 11 24 gdpr course group
+    coursewares:
+      - title: courseware1
+        href: "D:\\works\\codes\\e365\\scorm\\source\\gdpr2"
