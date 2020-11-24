@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// ManifestType ...
+// XMLManifestNode ...
 type XMLManifestNode struct {
 	XMLName           xml.Name             `xml:"manifest"`
 	Identifier        xml.Attr             `xml:"identifier,attr"`
@@ -23,21 +23,21 @@ type XMLManifestNode struct {
 	ResourceNode      XMLResourcesNode     `xml:"resources"`
 }
 
-// MetadataType ...
+// XMLMetadataType ...
 type XMLMetadataType struct {
 	XMLName       xml.Name `xml:"metadata"`
 	Schema        string   `xml:"schema"`
 	Schemaversion string   `xml:"schemaversion"`
 }
 
-// OrganizationsType ...
+// XMLOrganizationsNode ...
 type XMLOrganizationsNode struct {
 	XMLName       xml.Name          `xml:"organizations"`
 	Default       xml.Attr          `xml:"default,attr"`
 	Organizations []XMLOrganization `xml:"organization"`
 }
 
-// OrganizationType ...
+// XMLOrganization ...
 type XMLOrganization struct {
 	XMLName    xml.Name      `xml:"organization"`
 	Identifier xml.Attr      `xml:"identifier,attr"`
@@ -45,7 +45,7 @@ type XMLOrganization struct {
 	Items      []XMLItemType `xml:"item"`
 }
 
-// ItemType ...
+// XMLItemType ...
 type XMLItemType struct {
 	XMLName       xml.Name      `xml:"item"`
 	Identifier    xml.Attr      `xml:"identifier,attr"`
@@ -54,13 +54,13 @@ type XMLItemType struct {
 	Items         []XMLItemType `xml:"item"`
 }
 
-// ResourcesType ...
+// XMLResourcesNode ...
 type XMLResourcesNode struct {
 	XMLName  xml.Name          `xml:"resources"`
 	Resource []XMLResourceType `xml:"resource"`
 }
 
-// ResourceType ...
+// XMLResourceType ...
 type XMLResourceType struct {
 	XMLName    xml.Name            `xml:"resource"`
 	Identifier xml.Attr            `xml:"identifier,attr"`
@@ -71,13 +71,13 @@ type XMLResourceType struct {
 	Dependency []XMLDependencyType `xml:"dependency"`
 }
 
-// FileType ...
+// XMLFileType ...
 type XMLFileType struct {
 	XMLName xml.Name `xml:"file"`
 	Href    xml.Attr `xml:"href,attr"`
 }
 
-// DependencyType ...
+// XMLDependencyType ...
 type XMLDependencyType struct {
 	XMLName       xml.Name `xml:"dependency"`
 	Identifierref xml.Attr `xml:"identifierref,attr"`
