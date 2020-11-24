@@ -7,7 +7,7 @@ type Organization struct {
 	Items      []Item
 }
 
-// Item 课件
+// Item 课件项目
 type Item struct {
 	Identifier    string
 	Identifierref string
