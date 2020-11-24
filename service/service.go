@@ -30,7 +30,7 @@ func NewService() Service {
 }
 
 func (s *service) GenScorm2004(confYML, outXML string) {
-	content := s.readYMLToScorm(confYML)
+	content := s.readConfigAndGenScorm2004(confYML)
 	s.scormToXML(content, outXML)
 }
 
@@ -48,7 +48,8 @@ func (s *service) NewScorm2004() scorm.Scorm {
 		Resources:     resources}
 }
 
-func (s *service) readYMLToScorm(configYML string) scorm.Scorm {
+// readConfigAndGenScorm2004 读取配置文件并生成scorm配置
+func (s *service) readConfigAndGenScorm2004(configYML string) scorm.Scorm {
 	//应该是 绝对地址
 	yamlFile, err := ioutil.ReadFile(configYML)
 	if err != nil {
@@ -110,6 +111,7 @@ func (s *service) readYMLToScorm(configYML string) scorm.Scorm {
 	return scormContent
 }
 
+// loadResources 读取课件资源(目录和文件列表)
 func (s *service) loadResources(dir string) []scorm.File {
 	resources := []scorm.File{}
 	dir = strings.TrimRight(dir, "/")
@@ -129,6 +131,7 @@ func (s *service) loadResources(dir string) []scorm.File {
 	return resources
 }
 
+// scormToXML 由scorm结构生成scorm的xml配置文件
 func (s *service) scormToXML(content scorm.Scorm, outXML string) {
 	v := new(sxml.XMLManifestNode)
 	v.Identifier = xml.Attr{Name: xml.Name{Local: "identifier"}, Value: "easymind_scorm_2004_course_generator"}
