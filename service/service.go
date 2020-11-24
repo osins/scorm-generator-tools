@@ -29,6 +29,7 @@ func NewService() Service {
 	return &service{}
 }
 
+// GenScorm2004 生成scorm配置文件
 func (s *service) GenScorm2004(confYML, outXML string) {
 	content := s.readConfigAndGenScorm2004(confYML)
 	s.scormToXML(content, outXML)
