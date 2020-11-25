@@ -12,5 +12,5 @@ type Item struct {
 	Identifier    string
 	Identifierref string
 	Title         string
-	items         []Item
+	Items         []Item
 }

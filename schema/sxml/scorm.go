@@ -40,16 +40,16 @@ type XMLOrganization struct {
 	XMLName    xml.Name      `xml:"organization"`
 	Identifier xml.Attr      `xml:"identifier,attr"`
 	Title      string        `xml:"title"`
-	Items      []XMLItemType `xml:"item"`
+	Items      []XMLItemNode `xml:"item"`
 }
 
-// XMLItemType ...
-type XMLItemType struct {
+// XMLItemNode ...
+type XMLItemNode struct {
 	XMLName       xml.Name      `xml:"item"`
 	Identifier    xml.Attr      `xml:"identifier,attr"`
 	Identifierref xml.Attr      `xml:"identifierref,attr"`
 	Title         string        `xml:"title"`
-	Items         []XMLItemType `xml:"item"`
+	Items         []XMLItemNode `xml:"item"`
 }
 
 // XMLResourcesNode ...
