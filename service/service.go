@@ -113,9 +113,9 @@ func (s *service) scormToXML(outXML string) {
 		v.OrganizationNode.Organizations = append(v.OrganizationNode.Organizations, organization)
 	}
 
-	v.ResourceNode = sxml.XMLResourcesNode{Resource: []sxml.XMLResourceType{}}
+	v.ResourceNode = sxml.XMLResourcesNode{Resource: []sxml.XMLResourceNode{}}
 	for _, r := range s.content.Resources {
-		resource := sxml.XMLResourceType{
+		resource := sxml.XMLResourceNode{
 			Identifier: xml.Attr{Name: xml.Name{Local: "identifier"}, Value: r.Identifier},
 			Type:       xml.Attr{Name: xml.Name{Local: "type"}, Value: "webcontent"},
 			ScormType:  xml.Attr{Name: xml.Name{Local: "adlcp:scormType"}, Value: r.Type},
@@ -126,14 +126,14 @@ func (s *service) scormToXML(outXML string) {
 		}
 
 		if r.Dependency != (scorm.Dependency{}) {
-			resource.Dependency = []sxml.XMLDependencyType{{
+			resource.Dependency = []sxml.XMLDependencyNode{{
 				Identifierref: xml.Attr{
 					Name:  xml.Name{Local: "identifierref"},
 					Value: r.Dependency.Identifierref}}}
 		}
 
 		for _, f := range r.Files {
-			xmlFile := sxml.XMLFileType{
+			xmlFile := sxml.XMLFileNode{
 				Href: xml.Attr{Name: xml.Name{Local: "href"}, Value: f.Href}}
 
 			resource.Files = append(resource.Files, xmlFile)

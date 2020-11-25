@@ -55,28 +55,28 @@ type XMLItemNode struct {
 // XMLResourcesNode ...
 type XMLResourcesNode struct {
 	XMLName  xml.Name          `xml:"resources"`
-	Resource []XMLResourceType `xml:"resource"`
+	Resource []XMLResourceNode `xml:"resource"`
 }
 
-// XMLResourceType ...
-type XMLResourceType struct {
+// XMLResourceNode ...
+type XMLResourceNode struct {
 	XMLName    xml.Name            `xml:"resource"`
 	Identifier xml.Attr            `xml:"identifier,attr"`
 	Type       xml.Attr            `xml:"type,attr"`
 	ScormType  xml.Attr            `xml:"scormType,attr"`
 	Href       xml.Attr            `xml:"href,attr"`
-	Files      []XMLFileType       `xml:"file"`
-	Dependency []XMLDependencyType `xml:"dependency"`
+	Files      []XMLFileNode       `xml:"file"`
+	Dependency []XMLDependencyNode `xml:"dependency"`
 }
 
-// XMLFileType ...
-type XMLFileType struct {
+// XMLFileNode ...
+type XMLFileNode struct {
 	XMLName xml.Name `xml:"file"`
 	Href    xml.Attr `xml:"href,attr"`
 }
 
-// XMLDependencyType ...
-type XMLDependencyType struct {
+// XMLDependencyNode ...
+type XMLDependencyNode struct {
 	XMLName       xml.Name `xml:"dependency"`
 	Identifierref xml.Attr `xml:"identifierref,attr"`
 }
