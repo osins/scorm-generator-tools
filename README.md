@@ -1,5 +1,5 @@
 # scorm-generator-tools
-本项目乃Scorm标准课件生成工具, 暂时支持HTML课件, 因html本身可以包容多种媒体类型,如:html\ppt\excel\word\pdf\MP4\mp3, 所以应该足够了, 后续如果遇到确实需要单独指定媒体类型再完善.
+本项目乃Scorm标准课件生成工具, 暂时只支持HTML课件, 因html本身可以包容多种媒体类型,如:html\ppt\excel\word\pdf\MP4\mp3, 所以应该足够了, 后续如果遇到确实需要单独指定媒体类型再完善.
 
 ### 使用该工具命令行方式如下:
 ```
