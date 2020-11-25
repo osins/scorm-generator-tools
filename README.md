@@ -1,5 +1,7 @@
 # scorm-generator-tools
-本项目乃Scorm标准课件生成工具, 使用该工具命令行方式如下:
+本项目乃Scorm标准课件生成工具, 暂时支持HTML课件, 因html本身可以包容多种媒体类型,如:html\ppt\excel\word\pdf\MP4\mp3, 所以应该足够了, 后续如果遇到确实需要单独指定媒体类型再完善.
+
+### 使用该工具命令行方式如下:
 ```
 scorm-generator-tools -c 配置文件 -o Scorm课件配置文件输出目录 -d 打包文件目录和文件名称(注意加上.zip扩展名)
 ```
