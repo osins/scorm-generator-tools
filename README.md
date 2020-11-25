@@ -8,3 +8,40 @@ scorm-generator-tools -c 配置文件 -o Scorm课件配置文件输出目录 -d 
 go get -u -v github.com/wangsying/scorm-generator-tools
 scorm-generator-tools -c .\config.yaml -o D:\temps\courses -d d:\temps\package.zip
 ```
+
+### 配置文件的例子
+
+```
+courses:
+  - title: 课程名称
+    organization: 组织名称(建议用英文)
+    coursewares:
+      - title: "章节名称"
+        coursewares:
+          - title: "子课程名称(也即课件)"
+            href: "课件所在目录"
+          - title: "子课程名称2(也即课件)"
+            href: "课件2所在目录"
+      - title: "eMail Course"
+        coursewares:
+          - title: "step 1"
+            coursewares:
+              - title: "Insider Threat Overview"
+                href: "D:\\temps\\test2\\eml2"
+              - title: "Email Security on Mobile Devices"
+                href: "D:\\temps\\test2\\eml6"
+          - title: "step 2"
+            coursewares:
+              - title: "Spear Phishing Threats"
+                href: "D:\\temps\\test2\\eml7"
+              - title: "Avoiding Dangerous Attachments"
+                href: "D:\\temps\\test2\\eml4"
+              - title: "Avoiding Dangerous Links"
+                href: "D:\\temps\\test2\\eml3"
+          - title: "step 3"
+            coursewares:
+              - title: "Data Entry Phishing"
+                href: "D:\\temps\\test2\\eml5"
+              - title: "Introduction to Phishing"
+                href: "D:\\temps\\test2\\eml1"
+```                
