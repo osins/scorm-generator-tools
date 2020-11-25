@@ -13,7 +13,7 @@ scorm-generator-tools -c .\config.yaml -o D:\temps\courses -d d:\temps\package.z
 
 ### 配置文件的例子
 
-配置文件的格式才用的yaml标准规范, 因Scorm默认采用XML, 对于普通的课件制作者来说过于复杂, 而借助一些专用的工具又需要付费或者学习如何使用, 所以通过简单地配置将html课件直接打包成Scorm或者更容易一些.
+配置文件的格式采用的yaml标准规范, 因Scorm默认采用XML, 对于普通的课件制作者来说过于复杂, 而借助一些专用的工具又需要付费或者学习如何使用, 所以通过简单地配置将html课件直接打包成Scorm或者更容易一些.
 
 ```
 courses:
