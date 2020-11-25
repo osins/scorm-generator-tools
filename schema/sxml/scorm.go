@@ -16,13 +16,13 @@ type XMLManifestNode struct {
 	XmlnsAdlnav       xml.Attr             `xml:"xmlns adlnav,attr"`
 	XmlnsImsss        xml.Attr             `xml:"xmlns imsss,attr"`
 	XsiSchemaLocation xml.Attr             `xml:"schemaLocation,attr"`
-	MetadataNode      XMLMetadataType      `xml:"metadata"`
+	MetadataNode      XMLMetadataNode      `xml:"metadata"`
 	OrganizationNode  XMLOrganizationsNode `xml:"organizations"`
 	ResourceNode      XMLResourcesNode     `xml:"resources"`
 }
 
-// XMLMetadataType ...
-type XMLMetadataType struct {
+// XMLMetadataNode ...
+type XMLMetadataNode struct {
 	XMLName       xml.Name `xml:"metadata"`
 	Schema        string   `xml:"schema"`
 	Schemaversion string   `xml:"schemaversion"`
