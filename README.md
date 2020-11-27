@@ -17,8 +17,19 @@ scorm-generator-tools -c .\config.yaml -o D:\temps\courses -d d:\temps\package.z
 
 源文件目录
 ```
-课件的顶层目录/课件目录/index.html
-课件的顶层目录/imsmanifest.xml(scorm配置文件)
+课件的顶层目录/课件1/index.html
+课件的顶层目录/课件2/index.html
+...
+课件的顶层目录/课件n/index.html
+```
+
+课件打包(zip)后的目录
+```
+imsmanifest.xml(scorm配置文件)
+课件1/index.html
+课件2/index.html
+...
+课件n/index.html
 ```
 
 config.yml :
