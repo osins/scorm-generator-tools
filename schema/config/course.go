@@ -17,4 +17,5 @@ type Courseware struct {
 	Title       string       `yaml:"title"`
 	Href        string       `yaml:"href"`
 	Coursewares []Courseware `yaml:"coursewares"`
+	Parameters  string       `yaml:"parameters"`
 }

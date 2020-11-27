@@ -49,6 +49,7 @@ type XMLItemNode struct {
 	Identifier    xml.Attr      `xml:"identifier,attr"`
 	Identifierref xml.Attr      `xml:"identifierref,attr"`
 	Title         string        `xml:"title"`
+	Parameters    xml.Attr      `xml:"parameters,attr"`
 	Items         []XMLItemNode `xml:"item"`
 }
 

@@ -12,5 +12,6 @@ type Item struct {
 	Identifier    string
 	Identifierref string
 	Title         string
+	Parameters    string
 	Items         []Item
 }

@@ -170,7 +170,9 @@ func (s *service) loadCoursewares(prefix string, coursewares []config.Courseware
 		item := scorm.Item{
 			Title:         w.Title,
 			Identifier:    itemID,
-			Identifierref: scoID}
+			Identifierref: scoID,
+			Parameters:    w.Parameters}
+
 		// 获取目录前缀
 		re3, _ := regexp.Compile("[^\\\\]*$")
 		indexHomeHref := re3.FindString(w.Href) + "/index.html"
@@ -208,6 +210,7 @@ func (s *service) loadItems(items []scorm.Item) []sxml.XMLItemNode {
 		item := sxml.XMLItemNode{
 			Title:      i.Title,
 			Identifier: xml.Attr{Name: xml.Name{Local: "identifier"}, Value: i.Identifier},
+			Parameters: xml.Attr{Name: xml.Name{Local: "parameters"}, Value: i.Parameters},
 		}
 
 		if len(i.Items) > 0 {
@@ -282,10 +285,10 @@ func (s *service) zip(dst, src string) (err error) {
 		if err != nil {
 			return
 		}
-
-		// 替换文件信息中的文件名
+		fmt.Println(path)
+		// 替换文件信息中的\\为/(适应linux系统)
 		fh.Name = strings.ReplaceAll(strings.TrimPrefix(path, src+"\\"), "\\", "/")
-
+		fmt.Println("replace dir prefix:", src+"\\", "=>", fh.Name)
 		// 这步开始没有加，会发现解压的时候说它不是个目录
 		if fi.IsDir() {
 			fh.Name += "/"
